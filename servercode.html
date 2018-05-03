@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<?php
+
+	if($_GET["action"] !="0"){
+		$myfiles = fopen("arm.txt", "w") or die("Unable to open file!");
+		if($_GET["action"] =="close){
+			fwrite($myfile,"1");
+		}elseif($_GET["action"] =="open"){
+			fwrite($myfile,"2");
+		}
+		fclose($myfile);
+		sleep(5);
+		$myfile = fopen("arm.txt", "w") or die{"Unable to open file!");
+		fwrite($myfile,"0");
+		fclose($myfile);
+		}
+	}
+	
+?>
+<html>
+
+	<body>
+		<form method="get">
+			<input type="radio" name="action" value="open" checked>Open
+			<br>
+			<input type="radio" name="action" value="close">Close
+			<br>
+			<input type="submit">
+		</form>
+		
+	</body>
+</html>
